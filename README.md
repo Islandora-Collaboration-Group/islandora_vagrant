@@ -16,6 +16,13 @@ Additional extensions to the project can be introduced by adding a bash script (
 
 Additions to the project should be independent and idempotent (producing the same results if run more than once) whenever possible since the order of execution of scripts in ./scripts/custom may be unpredictable.
 
+Extension History -------------------- 
+
+  * scg.sh - Adds anbd invokes Mark Jordan's Sample Content Generator module. 2016-03-28 MM
+  * theme.sh - Adds ability to download, enable and set a default theme from Drupal.org or via Git. 2016-03-28 MM
+  * icu.sh - Adds the Islandora Common Utilities (ICU) module from Digital Grinnell. 2016-03-29 MM
+  * idu.sh - Adds the Islandora Drush Utilities (IDU) module from Digital Grinnell. Depends on ICU. 2016-03-29 MM
+
 The remainder of this document is identical to README.md from the https://github.com/Islandora-Labs/islandora_vagrant project.
 
 ## Requirements
