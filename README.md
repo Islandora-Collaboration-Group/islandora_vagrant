@@ -8,7 +8,7 @@ N.B. This virtual machine **should not** be used in production.
 
 ## Customizations (EXTENSIONS)
 
-This is a customized fork of the https://github.com/Islandora-Labs/islandora_vagrant project.  A ./scripts/custom.sh bash script (a feature supported by the original project) has been added along with the addition of a ./scripts/custom directory and a ./configs/custom_variables bash script.  The original project has NOT been modified in any way, it has only been EXTENDED.
+This is a customized fork of the https://github.com/Islandora-Labs/islandora_vagrant project.  **Note that changes in this project are NOT intended to be committed back upstream to https://github.com/Islandora-Labs/islandora_vagrant.** A ./scripts/custom.sh bash script (a feature supported by the original project) has been added along with the addition of a ./scripts/custom directory and a ./configs/custom_variables bash script.  The original project has NOT been modified in any way, it has only been EXTENDED.
  
 The project was initially extended by adding an scg.sh (Sample Content Generator) and a theme.sh (allows a Drupal theme to be applied to the VM) script to the ./scripts/custom directory, along with introduction of supporting variables in ./configs/custom_variables. 
 
