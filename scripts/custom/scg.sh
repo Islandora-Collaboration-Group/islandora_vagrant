@@ -14,7 +14,7 @@
 #   if ISLANDORA_VAGRANT_FORCE_CONTENT variable in the host's ../configs/custom_variables is defined.
 #   Example:
 #     export ISLANDORA_VAGRANT_FORCE_CONTENT=TRUE
-#   Set ISLANDORA_VAGRANT_FORCE_CONTENT to "" (null) in order to disable content generation.
+#   Unset ISLANDORA_VAGRANT_FORCE_CONTENT to disable forced content generation.
 #
 # Changes:
 # 28-Mar-2016 - Added check for existing content and the ISLANDORA_VAGRANT_FORCE_CONTENT variable.
