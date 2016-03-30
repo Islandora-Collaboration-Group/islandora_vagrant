@@ -24,9 +24,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 
   unless  $forward.eql? "FALSE"  
-    config.vm.network :forwarded_port, guest: 8080, host: 8080 # Tomcat
-    config.vm.network :forwarded_port, guest: 3306, host: 3306 # MySQL
-    config.vm.network :forwarded_port, guest: 8000, host: 8000 # Apache
+   config.vm.network :forwarded_port, guest: 8080, host: 8080, auto_correct: true, id: "tomcat" # Tomcat
+   config.vm.network :forwarded_port, guest: 3306, host: 3306, auto_correct: true, id: "mysql"  # MySQL
+   config.vm.network :forwarded_port, guest: 8000, host: 8000, auto_correct: true, id: "apache" # Apache
   end
 
   config.vm.provider "virtualbox" do |vb|
