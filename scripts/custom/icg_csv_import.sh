@@ -1,16 +1,17 @@
 #!/bin/bash
 
-# icu.sh
+# idu.sh
 #
 # When placed in the ../scripts/custom directory this script will is automatically invoked by
-# ../scripts/custom to load and configure Digital Grinnell's Islandora Common Utilities (icu)
-# module from https://github.com/DigitalGrinnell/icu.
-#
-# Changes:
-# 29-Mar-2016 - Initial merge.
+# ../scripts/custom to load and the ICG CSV Import project/module from
+# from https://github.com/Islandora-Collaboration-Group/icg_csv_import
 #
 
-echo "Installing the Digital Grinnell ICU module per icu.sh."
+# Changes:
+# 31-Mar-2016 - Initial merge.
+#
+
+echo "Installing the ICG CSV Import module per icg_csv_import.sh."
 
 SHARED_DIR=$1
 
@@ -20,14 +21,14 @@ if [ -f "$SHARED_DIR/configs/variables" ]; then
 fi
 
 # Clone custom modules from GitHub
-echo "Cloning DG's icu Module."
+echo "Cloning ICG's CSV import module."
 cd "$DRUPAL_HOME"/sites/all/modules || exit
-git clone https://github.com/DigitalGrinnell/icu
-cd icu
+git clone https://github.com/Islandora-Collaboration-Group/icg_csv_import.git
+cd icg_csv_import
 git config core.filemode false
 
 # Enable the custom modules
-drush -y -u 1 en icu
+drush -y -u 1 en icg_csv_import
 
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 
