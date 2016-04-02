@@ -8,6 +8,7 @@
 #
 
 # Changes:
+# 01-Apr-2016 - Switching temporarily to DigitalGrinnell/dg_csv_import
 # 31-Mar-2016 - Initial merge.
 #
 
@@ -23,7 +24,8 @@ fi
 # Clone custom modules from GitHub
 echo "Cloning ICG's CSV import module."
 cd "$DRUPAL_HOME"/sites/all/modules || exit
-git clone https://github.com/Islandora-Collaboration-Group/icg_csv_import.git
+# git clone https://github.com/Islandora-Collaboration-Group/icg_csv_import.git
+git clone https://github.com/DigitalGrinnell/icg_csv_import.git
 cd icg_csv_import
 git config core.filemode false
 
@@ -36,3 +38,5 @@ cd "$DRUPAL_HOME"/sites/all/modules || exit
 sudo chown -hR vagrant:www-data "$DRUPAL_HOME"/sites/all/modules
 sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/modules
 
+# Make necessary changes for SimpleTest
+sudo chmod 666 /usr/local/fedora/server/config/filter-drupal.xml
