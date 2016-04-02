@@ -19,8 +19,13 @@ if [ -f "$SHARED_DIR/configs/variables" ]; then
   . "$SHARED_DIR"/configs/variables
 fi
 
+# Install xdebug package
 sudo apt-get install php5-xdebug
 
+# Modify the php.ini file if necessary, and restart apache.
+if grep -q "/Added for xdebug/" /etc/php5/apache2/php.ini; then
+  echo "XDebug is already configured in php.ini."
+else
 cat <<EOT >> /etc/php5/apache2/php.ini
 # Added for xdebug
 zend_extension="/usr/lib/php5/20100525/xdebug.so"
@@ -31,4 +36,6 @@ xdebug.remote_host=127.0.0.1
 xdebug.remote_port=9000
 EOT
 
+# Restart apache
 sudo service apache2 restart
+fi
