@@ -23,7 +23,7 @@ fi
 sudo apt-get install php5-xdebug
 
 # Modify the php.ini file if necessary, and restart apache.
-if grep -q "/Added for xdebug/" /etc/php5/apache2/php.ini; then
+if grep -q remote_handler=dbgp /etc/php5/apache2/php.ini; then
   echo "XDebug is already configured in php.ini."
 else
 cat <<EOT >> /etc/php5/apache2/php.ini
