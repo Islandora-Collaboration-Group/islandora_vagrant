@@ -23,17 +23,14 @@ fi
 sudo apt-get install php5-xdebug
 
 # Modify the php.ini file if necessary, and restart apache.
-if grep -q remote_handler=dbgp /etc/php5/apache2/php.ini; then
+if grep -q remote_connect_back /etc/php5/apache2/php.ini; then
   echo "XDebug is already configured in php.ini."
 else
 cat <<EOT >> /etc/php5/apache2/php.ini
 # Added for xdebug
-zend_extension="/usr/lib/php5/20100525/xdebug.so"
-xdebug.remote_enable=1
-xdebug.remote_handler=dbgp
-xdebug.remote_mode=req
-xdebug.remote_host=127.0.0.1
-xdebug.remote_port=9000
+zend_extension="/usr/lib/php5/20121212/xdebug.so"
+xdebug.remote_enable = on
+xdebug.remote_connect_back = on
 EOT
 
 # Restart apache
