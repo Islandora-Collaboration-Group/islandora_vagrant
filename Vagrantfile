@@ -18,7 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # MM adding shared folder
-  config.vm.synced_folder "tmp/", "/tmp"
+  # config.vm.synced_folder "tmp/", "/tmp"
 
   config.vm.hostname = $hostname
 
