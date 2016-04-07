@@ -38,5 +38,6 @@ cd "$DRUPAL_HOME"/sites/all/modules || exit
 sudo chown -hR vagrant:www-data "$DRUPAL_HOME"/sites/all/modules
 sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/modules
 
-# Make necessary changes for SimpleTest
+# Make necessary changes for Testing (simpletest)
+drush -y -u 1 en simpletest
 sudo chmod 666 /usr/local/fedora/server/config/filter-drupal.xml

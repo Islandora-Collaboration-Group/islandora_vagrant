@@ -17,6 +17,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.name = "Islandora 7.x-1.x Development VM"
   end
 
+  # MM adding shared folder
+  config.vm.synced_folder "tmp/", "/tmp"
+
   config.vm.hostname = $hostname
 
   # Every Vagrant virtual environment requires a box to build off of.
