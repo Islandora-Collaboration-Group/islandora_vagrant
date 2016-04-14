@@ -23,16 +23,18 @@ fi
 
 # Now, check for a ../config/custom_variables and pull definitions from it if found.
 if [ -f "$SHARED_DIR/configs/custom_variables" ]; then
-  . "$SHARED_DIR"/configs/custom_variables
   echo "Invoking ../configs/custom_variables."
+  # shellcheck source=/dev/null
+  . "$SHARED_DIR"/configs/custom_variables
 fi
 
 # Run all the scripts (*.sh) found in ../scripts/custom/.
 for SCRIPT in ${SHARED_DIR}/scripts/custom/*.sh
 do
   if [ -f "$SCRIPT" ]; then
-	source "$SCRIPT"
 	echo "Custom.sh is invoking script '$SCRIPT'..."
+  	# shellcheck source=/dev/null
+	source "$SCRIPT"
   fi
 done
 
