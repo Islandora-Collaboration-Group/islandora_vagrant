@@ -23,7 +23,7 @@ fi
 echo "Cloning DG's icu Module."
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 git clone https://github.com/DigitalGrinnell/icu
-cd icu
+cd icu || exit
 git config core.filemode false
 
 # Enable the custom modules

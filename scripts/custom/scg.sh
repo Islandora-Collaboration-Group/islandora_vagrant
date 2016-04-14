@@ -39,7 +39,7 @@ fi
 echo "Cloning Mark Jordan's islandora_scg Module."
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 git clone https://github.com/mjordan/islandora_scg
-cd islandora_scg
+cd islandora_scg || exit
 git config core.filemode false
 
 # Move pdf.js drush file to user's .drush folder

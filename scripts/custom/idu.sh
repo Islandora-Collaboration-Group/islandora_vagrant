@@ -25,7 +25,7 @@ fi
 echo "Cloning DG's idu Module."
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 git clone https://github.com/DigitalGrinnell/idu
-cd idu
+cd idu || exit
 git config core.filemode false
 
 # Enable the custom modules
