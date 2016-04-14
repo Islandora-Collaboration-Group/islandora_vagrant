@@ -1,4 +1,4 @@
-# Islandora Vagrant [![Build Status](https://travis-ci.org/Islandora-Labs/islandora_vagrant.svg?branch=master)](https://travis-ci.org/Islandora-Labs/islandora_vagrant)
+# Islandora Vagrant [![Build Status](https://travis-ci.org/Islandora-Collaboration-Group/islandora_vagrant.svg?branch=master)](https://travis-ci.org/Islandora-Collaboration-Group/islandora_vagrant)
 
 ## Introduction
 
