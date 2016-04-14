@@ -66,14 +66,15 @@ echo "There are $numFound objects already in Fedora."
 if [[ $numFound < 20 || $ISLANDORA_VAGRANT_FORCE_CONTENT ]]; then
   cd "$DRUPAL_HOME"/sites/all/modules/islandora_scg || exit
   echo "Generating content using the islandora_scg module."
+  drush -u 1 iscgl --user=admin --quantity=1 --content_model=islandora:collectionCModel --parent=islandora:root --namespace=icg-test
   drush -u 1 iscgl --user=admin --quantity=2 --content_model=islandora:collectionCModel --parent=islandora:root --namespace=icg-collection
-  drush -u 1 iscgl --user=admin --quantity=7 --content_model=islandora:sp_basic_image --parent=islandora:sp_basic_image_collection --namespace=icg-basic-image
+  drush -u 1 iscgl --user=admin --quantity=3 --content_model=islandora:sp_basic_image --parent=islandora:sp_basic_image_collection --namespace=icg-basic-image
   drush -u 1 iscgl --user=admin --quantity=2 --content_model=islandora:sp_large_image_cmodel --parent=islandora:sp_large_image_collection --namespace=icg-large-image
-  drush -u 1 iscgl --user=admin --quantity=7 --content_model=islandora:sp_pdf --parent=islandora:sp_pdf_collection --namespace=icg-pdf
+  drush -u 1 iscgl --user=admin --quantity=3 --content_model=islandora:sp_pdf --parent=islandora:sp_pdf_collection --namespace=icg-pdf
   drush -u 1 iscgl --user=admin --quantity=2 --content_model=islandora:bookCModel --parent=islandora:bookCollection --namespace=icg-book
   drush -u 1 iscgl --user=admin --quantity=2 --content_model=islandora:newspaperCModel --parent=islandora:newspaper_collection --namespace=icg-newspaper2
   drush -u 1 iscgl --user=admin --quantity=2 --content_model=islandora:newspaperPageCModel --parent=icg-newspaper2:1 --namespace=icg-newspaper-page
-  drush -u 1 iscgl --user=admin --quantity=2 --content_model=islandora:newspaperPageCModel --parent=icg-newspaper2:2 --namespace=icg-newspaper-page
+# drush -u 1 iscgl --user=admin --quantity=2 --content_model=islandora:newspaperPageCModel --parent=icg-newspaper2:2 --namespace=icg-newspaper-page
 else
   echo "No additional content was generated."
 fi
