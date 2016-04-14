@@ -55,17 +55,17 @@ if [[ $git -eq 1 ]]
 then
   echo "Cloning custom theme using Git from 'ISLANDORA_VAGRANT_THEME'."
   cd "$DRUPAL_HOME"/sites/default/themes || exit
-  git clone $ISLANDORA_VAGRANT_THEME
-  cd */ || exit
+  git clone "$ISLANDORA_VAGRANT_THEME"
+  cd ./*/ || exit
   git config core.filemode false
-  info=`ls *.info`
+  info=$(ls ./*.info)
   echo "The theme's .info file is: $info."
   filename=$(basename "$info")
   theme="${filename%.*}"
   cd "$DRUPAL_HOME"/sites/default || exit
   echo "The custom theme '$theme' will be enabled and set as the default."
-  drush -y -u 1 en $theme
-  drush -u 1 vset theme_default $theme
+  drush -y -u 1 en "$theme"
+  drush -u 1 vset theme_default "$theme"
 fi
 
 # Apply a custom Drupal.org theme if one is defined by ISLANDORA_VAGRANT_THEME
@@ -74,10 +74,10 @@ if [[ $drupal -eq 1 ]]
 then
   echo "Downloading and enabling Drupal theme '$ISLANDORA_VAGRANT_THEME'."
   cd "$DRUPAL_HOME"/sites/default/themes || exit
-  drush -y -u 1 dl $ISLANDORA_VAGRANT_THEME
+  drush -y -u 1 dl "$ISLANDORA_VAGRANT_THEME"
   cd "$DRUPAL_HOME"/sites/default || exit
   echo "The custom theme '$ISLANDORA_VAGRANT_THEME' will be enabled and set as the default."
-  drush -y -u 1 en $ISLANDORA_VAGRANT_THEME
-  drush -u 1 vset theme_default $ISLANDORA_VAGRANT_THEME
+  drush -y -u 1 en "$ISLANDORA_VAGRANT_THEME"
+  drush -u 1 vset theme_default "$ISLANDORA_VAGRANT_THEME"
 fi
 
