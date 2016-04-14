@@ -39,7 +39,7 @@ fi
 echo "Cloning Mark Jordan's islandora_scg Module."
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 git clone https://github.com/mjordan/islandora_scg
-cd islandora_scg
+cd islandora_scg || exit
 git config core.filemode false
 
 # Move pdf.js drush file to user's .drush folder
@@ -63,7 +63,7 @@ echo "There are $numFound objects already in Fedora."
 
 # Adding in Peter's SCG drush commands to create the content IF fewer than 20 objects already exists, or
 # if the ISLANDORA_VAGRANT_FORCE CONTENT variable is set.
-if [[ $numFound < 20 || $ISLANDORA_VAGRANT_FORCE_CONTENT ]]; then
+if [[ $numFound -lt 20 || $ISLANDORA_VAGRANT_FORCE_CONTENT ]]; then
   cd "$DRUPAL_HOME"/sites/all/modules/islandora_scg || exit
   echo "Generating content using the islandora_scg module."
   drush -u 1 iscgl --user=admin --quantity=2 --content_model=islandora:collectionCModel --parent=islandora:root --namespace=icg-collection
