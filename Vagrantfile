@@ -17,8 +17,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.name = "Islandora 7.x-1.x Development VM"
   end
 
-  # MM adding shared folder
-  # config.vm.synced_folder "tmp/", "/tmp"
+  # MM mapping project's 'shared' folder as the guest's /tmp/shared
+  config.vm.synced_folder "shared/", "/tmp/shared"
 
   config.vm.hostname = $hostname
 
