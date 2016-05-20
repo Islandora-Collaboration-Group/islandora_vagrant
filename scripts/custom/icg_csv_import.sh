@@ -25,7 +25,7 @@ fi
 echo "Cloning ICG's CSV import module."
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 # git clone https://github.com/Islandora-Collaboration-Group/icg_csv_import.git
-git clone https://github.com/DigitalGrinnell/icg_csv_import.git
+git clone -b development https://github.com/DigitalGrinnell/icg_csv_import.git
 cd icg_csv_import
 git config core.filemode false
 
