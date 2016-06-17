@@ -3,10 +3,11 @@
 # islandora_mods_display.sh
 #
 # When placed in the ../scripts/custom directory this script will is automatically invoked by
-# ../scripts/custom to load and the https://github.com/jyobb/islandora_mods_display project/module.
+# ../scripts/custom to load and the https://github.com/DigitalGrinnell/islandora_mods_display project/module.
 #
 
 # Changes:
+# 17-Jun-2016 - Moved from jyobb version to new DigitalGrinnell version (forked from jyobb).
 # 20-Apr-2016 - Initial version.
 #
 
@@ -22,7 +23,7 @@ fi
 # Clone custom modules from GitHub
 echo "Cloning Islandora MODS Display module."
 cd "$DRUPAL_HOME"/sites/all/modules || exit
-git clone https://github.com/jyobb/islandora_mods_display
+git clone https://github.com/DigitalGrinnell/islandora_mods_display
 cd islandora_mods_display
 git config core.filemode false
 
