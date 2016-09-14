@@ -3,11 +3,12 @@
 # idu.sh
 #
 # When placed in the ../scripts/custom directory this script will is automatically invoked by
-# ../scripts/custom to load and the ICG CSV Import project/module from
-# from https://github.com/Islandora-Collaboration-Group/icg_csv_import
+# ../scripts/custom to load the ICG CSV Import project/module from
+# from https://github.com/DigitalGrinnell/icg_csv_import
 #
 
 # Changes:
+# 14-Sep-2016 - Cloning from DigitalGrinnell/icg_csv_import's 'development' branch.
 # 01-Apr-2016 - Switching temporarily to DigitalGrinnell/dg_csv_import
 # 31-Mar-2016 - Initial merge.
 #
