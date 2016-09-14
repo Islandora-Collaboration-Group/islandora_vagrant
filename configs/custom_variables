@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # export ISLANDORA_VAGRANT_THEME="bootstrap"
-export ISLANDORA_VAGRANT_THEME="https://github.com/DigitalGrinnell/bootstrap-dg.git"
-# export ISLANDORA_VAGRANT_THEME="https://github.com/DigitalGrinnell/Digital_Grinnell_Theme"
+export ISLANDORA_VAGRANT_THEME="https://github.com/DigitalGrinnell/Digital_Grinnell_Theme"
 # export ISLANDORA_VAGRANT_FORCE_CONTENT="TRUE"
 unset ISLANDORA_VAGRANT_FORCE_CONTENT
 
