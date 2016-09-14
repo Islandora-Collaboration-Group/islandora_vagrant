@@ -36,3 +36,8 @@ cd "$DRUPAL_HOME"/sites/all/modules || exit
 sudo chown -hR vagrant:www-data "$DRUPAL_HOME"/sites/all/modules
 sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/modules
 
+# Set metadata display to use this module!
+cd "$DRUPAL_HOME"/sites/default
+drush -y -u 1 vset islandora_metadata_display 'islandora'
+
+
