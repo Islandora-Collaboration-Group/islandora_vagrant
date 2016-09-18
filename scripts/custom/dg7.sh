@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# dg7.sh
+# icg_hooks.sh
 #
 # When placed in the ../scripts/custom directory this script will is automatically invoked by
-# ../scripts/custom to load and configure Digital Grinnell's dg7 module from
-# https://github.com/DigitalGrinnell/dg7. This module provides 'hooks' for the
+# ../scripts/custom to load the DigitalGrinnell/icg_hooks module from
+# https://github.com/DigitalGrinnell/icg_hooks. This module provides 'hooks' for the
 # ICG CSV Import module.
 #
 
 # Changes:
-# 16-Sep-2016 - Initial merge.
+# 18-Sep-2016 - Initial merge.
 #
 
-echo "Installing the Digital Grinnell dg7 module per dg7.sh."
+echo "Installing the ICG Hooks module per icg_hooks.sh."
 
 SHARED_DIR=$1
 
@@ -21,25 +21,19 @@ if [ -f "$SHARED_DIR/configs/variables" ]; then
   . "$SHARED_DIR"/configs/variables
 fi
 
-# Make sure dependencies for ssh2 file transfer are present.
-sudo apt-get update
-sudo apt-get -y install libssh2-1-dev libssh2-php
-sudo php5endmod ssh2
-sudo service apache2 restart
-
 # Clone custom modules from GitHub
-echo "Cloning DG's dg7 modules."
+echo "Cloning ICG Hooks module."
 cd "$DRUPAL_HOME"/sites/all/modules || exit
-git clone https://github.com/DigitalGrinnell/dg7
-cd dg7
+git clone https://github.com/DigitalGrinnell/icg_hooks
+cd icg_hooks
 git config core.filemode false
 
 # Enable the custom module
-drush -y -u 1 en dg7
+drush -y -u 1 en icg_hooks
 
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 
 # Permissions and ownership
-sudo chown -hR vagrant:www-data "$DRUPAL_HOME"/sites/all/modules
+sudo chown -R vagrant:www-data "$DRUPAL_HOME"/sites/all/modules
 sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/modules
 
