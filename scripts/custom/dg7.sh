@@ -22,7 +22,10 @@ if [ -f "$SHARED_DIR/configs/variables" ]; then
 fi
 
 # Make sure dependencies for ssh2 file transfer are present.
+sudo apt-get update
 sudo apt-get -y install libssh2-1-dev libssh2-php
+sudo php5endmod ssh2
+sudo service apache2 restart
 
 # Clone custom modules from GitHub
 echo "Cloning DG's dg7 modules."
