@@ -36,8 +36,11 @@ drush -y -u 1 en icg_csv_import
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 
 # Permissions and ownership
-sudo chown -hR vagrant:www-data "$DRUPAL_HOME"/sites/all/modules
+sudo chown -R vagrant:www-data "$DRUPAL_HOME"/sites/all/modules
 sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/modules
+
+# Copy some data for import use.
+sudo cp "$SHARED_DIR"/shared/CompleteSample/* "$DRUPAL_HOME"/sites/default/files
 
 # Make necessary changes for Testing (simpletest)
 drush -y -u 1 en simpletest
