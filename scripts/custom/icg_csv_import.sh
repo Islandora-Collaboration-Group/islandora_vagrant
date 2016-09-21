@@ -4,10 +4,11 @@
 #
 # When placed in the ../scripts/custom directory this script will is automatically invoked by
 # ../scripts/custom to load the ICG CSV Import project/module from
-# from https://github.com/DigitalGrinnell/icg_csv_import
+# from https://github.com/Islandora-Collaboration-Group/icg_csv_import
 #
 
 # Changes:
+# 21-Sep-2016 - Moved CSV work back to Islandora-Collaboration-Group
 # 14-Sep-2016 - Cloning from DigitalGrinnell/icg_csv_import's 'development' branch.
 # 01-Apr-2016 - Switching temporarily to DigitalGrinnell/dg_csv_import
 # 31-Mar-2016 - Initial merge.
@@ -25,8 +26,8 @@ fi
 # Clone custom modules from GitHub
 echo "Cloning ICG's CSV import module."
 cd "$DRUPAL_HOME"/sites/all/modules || exit
-# git clone https://github.com/Islandora-Collaboration-Group/icg_csv_import.git
-git clone -b development https://github.com/DigitalGrinnell/icg_csv_import.git
+git clone https://github.com/Islandora-Collaboration-Group/icg_csv_import.git
+# git clone -b development https://github.com/Islandora-Collaboration-Group/icg_csv_import.git
 cd icg_csv_import
 git config core.filemode false
 
