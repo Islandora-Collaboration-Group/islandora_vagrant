@@ -3,8 +3,8 @@
 # icg_hooks.sh
 #
 # When placed in the ../scripts/custom directory this script will is automatically invoked by
-# ../scripts/custom to load the DigitalGrinnell/icg_hooks module from
-# https://github.com/DigitalGrinnell/icg_hooks. This module provides 'hooks' for the
+# ../scripts/custom to load the Islandora-Collaboration-Group/icg_hooks module from
+# https://github.com/Islandora-Collaboration-Group/icg_hooks. This module provides 'hooks' for the
 # ICG CSV Import module.
 #
 
@@ -24,7 +24,7 @@ fi
 # Clone custom modules from GitHub
 echo "Cloning ICG Hooks module."
 cd "$DRUPAL_HOME"/sites/all/modules || exit
-git clone https://github.com/DigitalGrinnell/icg_hooks
+git clone https://github.com/Islandora-Collaboration-Group/icg_hooks
 cd icg_hooks
 git config core.filemode false
 
